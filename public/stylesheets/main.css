@@ -1,0 +1,429 @@
+@keyframes slide_left_right{
+	0%{
+		left: 0%;
+	}
+	100%{
+		left: 10%;
+	}
+}
+@font-face{
+  font-family: "heavy heap";
+  font-weight: 100; 
+  src: url("/fonts/heavy heap.ttf");
+}
+@font-face{
+  font-family: "sassoon";
+  src: url("/fonts/sassoonPrimaryStd-Bold.otf");
+}
+body {
+    font-family: 'KaTeX_Main';
+}
+
+/*_________________________
+     General
+___________________________ */
+
+.makeblock {
+  display: block;
+}
+
+.container {
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: auto;
+}
+
+body {
+  color: rgb(255, 255, 255);
+  font-size: 200%;
+  /* background: radial-gradient(rgb(239, 242, 245), hsl(208, 25%, 86%)); */
+  background: repeating-radial-gradient(rgb(62, 76, 83), black)
+    /*zoom: 1.11;*/
+}
+
+time {
+  float: right;
+  font-weight: 200;
+  font-size: 65%;
+  color: brown
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.showmore {
+  font-style: oblique;
+}
+
+/*________________________
+     Header
+  ________________________*/
+.primaryheader {
+  margin-bottom: 2em;
+}
+
+h1 {
+  text-align: center;
+  line-height: 1.3em;
+  font: 100 1.1em "sassoon", helvetica;
+  font-variant: small-caps;
+  text-shadow: 0.0 0.0em 0.03em red;
+}
+
+/*________________________
+      Grid
+ _________________________*/
+@media screen and (min-width:1020px) {
+  h1 {
+    line-height: 1.3em;
+    word-spacing: 1.1em;
+    text-align: center;
+    font-size: 1.3em;
+  }
+
+  .col-1-3 {
+    margin: 20px 0 0 18px;
+    width: 22%;
+    display: inline-block;
+    height: 10em;
+    padding: 1%;
+    vertical-align: top;
+    font-size: 58%
+  }
+
+  .col-2-3 {
+    width: 49%;
+    height: 10rem;
+    display: inline-block;
+    padding: 1%;
+    vertical-align: top;
+  }
+
+  .navigate {
+    background: inherit;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font: inherit;
+  }
+
+  .navigator {
+    display: none;
+  }
+}
+
+/*_______________________
+     Menu
+  ______________________*/
+
+ul {
+  list-style-type: disc;
+  text-align: left;
+}
+
+.option-link,
+.option-item {
+  color: rgb(180,180,190);
+  cursor: pointer;
+}
+
+.option-link {
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.option-link:hover,
+.option-item:hover {
+  color: rgb(255,20,20)
+}
+
+.option-item.is-active-option-item,
+.option-item.is-active-option-item .option-link {
+  color: red;
+  font-size: 1.013em
+  /* font-weight: bold; */
+}
+
+.navigate {
+  position: relative;
+  color: black;
+  /*rgba(0,10,132,1)*/
+  ;
+  font-style: italic;
+  font-weight: bold;
+  animation: 0.5s ease-in-out 3s infinite alternate slide_left_right;
+}
+
+/*_______________________
+    Instructions
+ _______________________*/
+#instructions {color: red;
+font-weight: bold;
+font-family: Sassoon;
+box-shadow: 0 0 22px red;
+height: fit-content;
+}
+
+/*_______________________
+    display
+  _______________________*/
+#display {
+  font-size: 0px;
+  text-align: center;
+  border: 10px groove rgba(79, 97, 125, 0.3);
+  border-radius: 15%;
+  box-shadow: 5px -7px 10px 5px -7px 10px rgb(3, 13, 3) inset inset;
+  background: black;
+  overflow: auto;
+}
+
+#display>* {
+  vertical-align: middle;
+  line-height: 1em;
+  font-size: 1.9rem;
+  color: #BfBfBf;
+}
+
+/*_______________________
+      Evaluator forms
+ ________________________*/
+.is-button-waiting {
+  cursor: wait;
+}
+
+.argument-forms input::placeholder,
+.argument-forms textarea::placeholder {
+  color: rgb(62, 76, 83);
+}
+
+.argument-forms input,
+.argument-forms textarea {
+  background: rgb(126, 136, 142);
+  color: black;
+}
+
+.argument-forms input:focus,
+.argument-forms textarea:focus {
+  background-color: rgb(242, 250, 254) !important;
+}
+
+
+input:invalid {
+  color: red;
+}
+
+.evaluator {
+  height: 41px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 30px;
+  padding: 0;
+  width: 80px;
+  vertical-align: top;
+  background: rgb(22, 36, 43);
+  border: 2px solid black;
+  border-left: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.evaluator:hover {
+  background-color: rgb(52, 66, 73);
+  border-color: rgb(30, 30, 30);
+  cursor: pointer;
+}
+
+input:disabled,
+.evaluator:disabled,
+select:disabled {
+  opacity: 0.75;
+  cursor: progress;
+}
+
+#baseForm input {
+  width: 13.5%;
+}
+
+
+
+/*_______________________
+     Footer
+  ______________________*/
+small {
+  float: left;
+    font-size: 0.68em;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1020px) {
+  body {
+    zoom: normal;
+  }
+  #display {
+    padding-top: 20px;
+  }
+#display * {
+  font-size: 1.8rem;
+}
+  .primaryheader {
+    z-index: 2;
+    position: relative;
+    margin-bottom: 0;
+    height: 3.85em;
+    margin-top: 20px;
+  }
+
+  input {
+    width: 80vw;
+    height: 2em;
+    margin-bottom: 10px;
+  }
+
+  button,
+  input,
+  legend,
+  label {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    line-height: 1;
+    font-size: 1.01em;
+  }
+
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  #display {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 40px;
+    border-radius: 0;
+  }
+
+  .optionbox {
+    transform: translate(0, -650px);
+    position: absolute;
+    z-index: 1;
+  }
+
+  .option-link,
+  .option-item {
+    color: rgb(180, 180, 180);
+  }
+
+  .option-link:hover,
+  .option-item:hover {
+    color: rgb(120, 120, 120)
+  }
+
+  .option-item.is-active-option-item,
+  .option-item.is-active-option-item .option-link {
+    color: rgb(100, 100, 100);
+  }
+
+  .instruction,
+  #instructions {
+    display: none;
+  }
+
+  time {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: right;
+    color: grey;
+  }
+
+  .navicon {
+    border-radius: 36%;
+    height: 3em;
+    display: inline-block;
+  }
+
+  .navicon * {
+    display: inline-block;
+  }
+
+  .navicon span {
+    display: block;
+    height: 14%;
+    border-radius: 15%;
+    background: brown;
+    width: 2.9em;
+    background-clip: content-box;
+    margin: 13% auto;
+  }
+
+  .navicon.showing span:nth-child(1) {
+    -webkit-transform: rotate(-50deg) translate(-19%, 150%);
+    -moz-transform: rotate(-50deg) translate(-19%, 150%);
+    transform: rotate(-50deg) translate(-22%, 150%);
+  }
+
+  .navicon.showing span:nth-child(3) {
+    -moz-transform: rotate(50deg) translate(-19%, -150%);
+    -webkit-transform: rotate(50deg) translate(-19%, -150%);
+    transform: rotate(50deg) translate(-19%, -150%);
+  }
+
+  .navicon.showing span:nth-child(2) {
+    visibility: hidden;
+    transition: none;
+  }
+
+  .navigator {
+    height: 1.45em;
+  }
+
+  .optionbox {
+    height: 10.5em;
+    display: block;
+    font-size: 0.9em;
+    background: black;
+  }
+
+  .optionbox.showing {
+    /*-webkit-transform: translate(0,-22%);
+	-moz-transform: translate(0,-22%); 
+	transform: translate(0,0%);*/
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+
+  .optionbox li {
+    margin-bottom: 10px;
+  }
+
+  .navigate {
+    animation: none;
+  }
+
+  /*.optionbox.showing .navigate{
+	animation: 0.5s ease-in-out 3s infinite alternate slide_left_right;
+}*/
+  .argument-forms {
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+
+
+}
